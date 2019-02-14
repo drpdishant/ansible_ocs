@@ -30,6 +30,9 @@
           - smartmontools
           - read-edid
           - nmap
-  tasks:
     - name: Download OCS Unix Agent
       shell: wget -O /home/OCS-Agent.tar.gz https://github.com/OCSInventory-NG/UnixAgent/releases/download/v2.4.2/Ocsinventory-Unix-Agent-2.4.2.tar.gz
+    - name: Extract OCS Unix Agent
+      shell: tar -xf /home/OCS-Agent.tar.gz -d /home && cd /home/OCS-Agent
+    - name: Install OCS Unix Agent
+      shell: env PERL_AUTOINSTALL=1 perl Makefile.PL && make && make install && perl postinstl.pl --nowizard --server=http://192.168.4.242:8000/ocsinventory --crontab
