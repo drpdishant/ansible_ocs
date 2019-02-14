@@ -1,8 +1,12 @@
 ---
 - name: Install OCS Agent
-  hosts: 127.0.0.1
-  connection: local
+  hosts: all
+  become: yes
+  become_user: root
   tasks:
+    - name: Update Cache
+      apt:
+        update_cache: yes
     - name: Install Dependencies
       apt:
         name: "{{ packages }}"
@@ -26,4 +30,6 @@
           - smartmontools
           - read-edid
           - nmap
-          - linet-netmask-perl
+  tasks:
+    - name: Download OCS Unix Agent
+      shell: wget -O /home/OCS-Agent.tar.gz https://github.com/OCSInventory-NG/UnixAgent/releases/download/v2.4.2/Ocsinventory-Unix-Agent-2.4.2.tar.gz
