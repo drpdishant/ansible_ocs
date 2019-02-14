@@ -1,5 +1,7 @@
 ---
 - name: Install OCS Agent
+  hosts: 127.0.0.1
+  connection: local
   tasks:
     - name: Install Dependencies
       apt:
