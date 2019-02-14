@@ -1,14 +1,16 @@
 ---
-- name: Install a list of packages
-  apt:
-    name: "{{ packages }}"
-  vars:
-    packages:
-      - libmodule-install-perl 
-      - dmidecode 
-      - libxml-simple-perl 
-      - libcompress-zlib-perl
-      - libnet-ip-perl
-      - libwww-perl
-      - libdigest-md5-perl
-      - libdata-uuid-perl
+- name: Install OCS Agent
+  tasks:
+    - name: Install Dependencies
+      apt:
+        name: "{{ packages }}"
+      vars:
+        packages:
+          - libmodule-install-perl 
+          - dmidecode 
+          - libxml-simple-perl 
+          - libcompress-zlib-perl
+          - libnet-ip-perl
+          - libwww-perl
+          - libdigest-md5-perl
+          - libdata-uuid-perl
