@@ -14,3 +14,14 @@
           - libwww-perl
           - libdigest-md5-perl
           - libdata-uuid-perl
+          - libcrypt-ssleay-perl
+          - libnet-snmp-perl
+          - libproc-pid-file-perl
+          - libproc-daemon-perl
+          - net-tools
+          - libsys-syslog-perl
+          - pciutils
+          - smartmontools
+          - read-edid
+          - nmap
+          - linet-netmask-perl
